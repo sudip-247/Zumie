@@ -38,7 +38,7 @@
   function respond(choice) {
     var msg = document.getElementById('response-msg');
     if (choice === 'yes') {
-      msg.innerHTML = '<span class="big">🥹💕</span><p>You just made me the happiest person! Can\'t wait for our date, Zumie.</p>';
+      msg.innerHTML = '<span class="big">🥹💕</span><p>You just made me the happiest person! Zumie.</p>';
       msg.style.display = 'block';
     } else {
       noBtnMoves++;
@@ -126,7 +126,7 @@ function respond(choice) {
 
     noBtnMoves++;
 
-    sendTelegram("🙈 She clicked NO (Attempt " + noBtnMoves + ")");
+    sendTelegram(" She clicked NO (Attempt " + noBtnMoves + ")");
 
     if (noBtnMoves < 3) {
       var btn = document.getElementById('noBtn');
