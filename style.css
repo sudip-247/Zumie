@@ -1,0 +1,202 @@
+  @import url('https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,500;1,400&family=Inter:wght@400;500&display=swap');
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  body {
+    font-family: 'Inter', sans-serif;
+    background: #fff8f5;
+    color: #3a2a20;
+    min-height: 100vh;
+    overflow-x: hidden;
+  }
+  .petals-bg {
+    position: fixed;
+    top: 0; left: 0; 
+    width: 100%; 
+    height: 100%;
+    pointer-events: none; 
+    z-index: 0; 
+    overflow: hidden;
+  }
+  .petal {
+    position: absolute;
+    border-radius: 50% 50% 50% 50% / 60% 60% 40% 40%;
+    opacity: 0;
+    animation: fall linear infinite;
+  }
+  @keyframes fall {
+    0%   { transform: translateY(-60px) rotate(0deg) scale(1); opacity: 0; }
+    10%  { opacity: 0.7; }
+    90%  { opacity: 0.5; }
+    100% { transform: translateY(110vh) rotate(400deg) scale(0.8); opacity: 0; }
+  }
+  .flower {
+    position: absolute;
+    font-size: 22px;
+    opacity: 0;
+    animation: fallFlower linear infinite;
+    pointer-events: none;
+  }
+  @keyframes fallFlower {
+    0%   { transform: translateY(-60px) rotate(0deg); 
+        opacity: 0; }
+    10%  { opacity: 0.85; }
+    90%  { opacity: 0.6; }
+    100% { transform: translateY(110vh) rotate(360deg); 
+        opacity: 0; }
+  }
+  .page { 
+    position: relative; 
+    z-index: 1; 
+    max-width: 680px; 
+    margin: 0 auto; 
+    padding: 0 20px 60px; 
+  }
+  .hero { 
+    text-align: center; 
+    padding: 72px 0 48px; 
+  }
+  .hero .emoji-big { 
+    font-size: 52px; 
+    display: block; 
+    margin-bottom: 16px;
+   }
+  .hero h1 {
+    font-family: 'Lora', serif;
+    font-size: clamp(2rem, 6vw, 3rem);
+    font-weight: 500; 
+    color: #c05278;
+    line-height: 1.2; 
+    margin-bottom: 12px;
+  }
+  .hero p {
+    font-size: 1rem; 
+    color: #7a5a55; 
+    font-style: italic; 
+    font-family: 'Lora', serif; 
+  }
+
+  .divider { 
+    display: flex; 
+    align-items: center; 
+    gap: 12px; margin: 0 auto 40px; 
+    max-width: 320px; 
+  }
+  .divider::before, .divider::after { 
+    content: ''; 
+    flex: 1; height: 1px; 
+    background: #f4b8c8;
+   }
+  .divider span { 
+    color: #f4b8c8; 
+    font-size: 18px;
+   }
+
+  .reasons-section { 
+    margin-bottom: 40px;
+   }
+  .reasons-section h2 {
+    font-family: 'Lora', serif; 
+    font-size: 1.4rem;
+    font-weight: 500; 
+    color: #c05278;
+    margin-bottom: 20px; 
+    text-align: center;
+  }
+  .reason { 
+    background: #fff0f4; 
+    border-radius: 16px; 
+    padding: 16px 20px; 
+    margin-bottom: 12px; 
+}
+  .reason p { 
+    font-size: 0.95rem; 
+    color: #5a3a3a; 
+    line-height: 1.6;
+   }
+
+  .question-section {
+    text-align: center;
+    background: linear-gradient(135deg, #fff0f4, #ffe8f0);
+    border-radius: 28px; 
+    padding: 44px 32px;
+    border: 1px solid #f9c5d1; 
+    margin-bottom: 40px;
+  }
+  .question-section h2 {
+    font-family: 'Lora', serif;
+    font-size: clamp(1.4rem, 4vw, 1.9rem);
+    color: #b03060; 
+    margin-bottom: 10px; 
+    font-weight: 500;
+  }
+  .question-section p {
+    font-size: 0.9rem; 
+    color: #7a5a55;
+    font-style: italic; 
+    font-family: 'Lora', serif; 
+    margin-bottom: 28px;
+  }
+  .btn-group { 
+    display: flex; 
+    gap: 14px; 
+    justify-content: center; 
+    flex-wrap: wrap; 
+  }
+  .btn {
+    font-family: 'Inter', sans-serif; 
+    font-size: 1rem; 
+    font-weight: 500;
+    padding: 14px 36px; 
+    border-radius: 50px; 
+    border: none; 
+    cursor: pointer;
+    transition: transform 0.15s ease, box-shadow 0.15s ease; 
+    display: inline-block;
+  }
+  .btn:active { 
+   transform: scale(0.96); 
+  }
+  .btn-yes {
+     background: #e05280; 
+     color: #ffffff; 
+    box-shadow: 0 4px 16px rgba(224,82,128,0.3); 
+}
+  .btn-yes:hover {
+     box-shadow: 0 6px 20px rgba(224,82,128,0.4); 
+    transform: translateY(-2px); 
+  }
+  .btn-no { 
+    background: #ffffff; 
+    color: #c05278; 
+    border: 1.5px solid #f4b8c8; 
+  }
+  .btn-no:hover { 
+    background: #fff8fa; 
+}
+  #response-msg { 
+    display: none; 
+    text-align: center; 
+    margin-top: 24px; 
+    animation: popin 0.4s ease; 
+  }
+  @keyframes popin { 
+    from { opacity: 0; 
+    transform: scale(0.85); } to { opacity: 1; transform: scale(1); }
+   }
+  #response-msg .big { 
+    font-size: 40px; 
+    display: block; 
+    margin-bottom: 8px; 
+  }
+  #response-msg p 
+  { font-family: 'Lora', serif; 
+    font-style: italic; 
+    font-size: 1.05rem; 
+    color: #b03060; 
+}
+  footer { 
+    text-align: center; 
+    font-size: 0.8rem; 
+    color: #c4a0a0; 
+    font-style: italic;
+    font-family: 'Lora', serif; 
+}
