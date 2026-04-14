@@ -167,7 +167,8 @@
   #response-msg p 
   { font-family: 'Lora', serif; 
     font-style: italic; 
-    font-size: 1.05rem; color: #b03060; 
+    font-size: 1.05rem; 
+    color: #b03060; 
 }
 
   footer { text-align: center; font-size: 0.8rem; color: #c4a0a0; 
