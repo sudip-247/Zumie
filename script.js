@@ -119,7 +119,7 @@ function respond(choice) {
 
     sendTelegram("💖 She clicked YES (Yesss! 🎉)");
 
-    msg.innerHTML = '<span class="big">🥹💕</span><p>You just made me the happiest person! Can\'t wait for our date, Zumie.</p>';
+    msg.innerHTML = '<span class="big">🥹💕</span><p>You just made me the happiest person!  Zumie.</p>';
     msg.style.display = 'block';
 
   } else {
